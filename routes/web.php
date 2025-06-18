@@ -26,14 +26,12 @@ Route::get('/cart', function () {
     return view('cart'); // Assuming your cart page is cart.blade.php
 })->name('cart');
 
-Route::get('/shop', function () {
-    return view('products'); // Assuming your products page is products.blade.php
-});
 
 use App\Http\Controllers\ProductController;
+Route::get('/shop', [ProductController::class, 'productList'])->name('shop');
 
 // Halaman untuk menampilkan daftar produk
-Route::get('/product', [ProductController::class, 'productList'])->name('product.list');
+
 
 // Halaman untuk menampilkan detail produk berdasarkan ID
 Route::get('/product/{id}', [ProductController::class, 'productDetail'])->name('product.detail');

@@ -15,7 +15,7 @@ class ProductController extends Controller
         $products = Product::all();
 
         // Mengirim data produk ke view 'product'
-        return view('product', compact('products')); // Mengirim variabel $products ke view 'product'
+        return view('products', compact('products')); // Mengirim variabel $products ke view 'product'
     }
 
     // Menampilkan detail produk berdasarkan ID di halaman product detail
